@@ -1,13 +1,13 @@
 # syntax=docker/dockerfile:1
 
 # ── Stage 1: build ──────────────────────────────────────────────────────────
-ARG NODE_VERSION=22
-FROM node:${NODE_VERSION}-slim AS build
+ARG NODE_VERSION=20
+FROM node:${NODE_VERSION}-alpine AS build
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 
 COPY . .
 RUN npm run build
