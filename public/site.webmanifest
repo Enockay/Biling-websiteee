@@ -1,0 +1,17 @@
+{
+  "name": "Blackie Networks",
+  "short_name": "Blackie",
+  "description": "Complete ISP billing and MikroTik management platform for African ISPs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

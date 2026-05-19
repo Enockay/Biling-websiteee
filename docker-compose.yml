@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  billing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: billing-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "coolify.managed=true"
+      - "coolify.name=billing-web"
+      - "coolify.http.port=80"
