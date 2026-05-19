@@ -9,7 +9,7 @@ services:
     container_name: billing-web
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "8085:83"
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost/"]
       interval: 30s
