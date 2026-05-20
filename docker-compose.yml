@@ -8,8 +8,10 @@ services:
       target: production
     container_name: billing-web
     restart: unless-stopped
-    ports:
-      - "8085:80"
+    expose:
+      - "80"
+    networks:
+      - coolify
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost/"]
       interval: 30s
@@ -17,6 +19,11 @@ services:
       retries: 3
       start_period: 10s
     labels:
-      - "coolify.managed=true"
-      - "coolify.name=billing-web"
-      - "coolify.http.port=80"
+      - "traefik.enable=true"
+      - "traefik.http.routers.billing.rule=Host(`billing.blackie-networks.com`)"
+      - "traefik.http.routers.billing.entrypoints=http"
+      - "traefik.http.services.billing.loadbalancer.server.port=80"
+
+networks:
+  coolify:
+    external: true
