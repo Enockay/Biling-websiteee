@@ -16,7 +16,7 @@ export default function TrialModal({ onClose, onSwitchToDemo }) {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
       <div
-        className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top accent bar */}

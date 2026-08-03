@@ -60,8 +60,8 @@ export default function SupportHero({ onDemo }) {
               </div>
 
               <div className="flex" style={{ minHeight: '400px' }}>
-                {/* Sidebar */}
-                <div className="w-44 sm:w-52 border-r border-gray-100 flex flex-col shrink-0">
+                {/* Sidebar — hidden on xs, visible from sm */}
+                <div className="hidden sm:flex w-44 md:w-52 border-r border-gray-100 flex-col shrink-0">
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
                     <span className="font-bold text-gray-900 text-sm">Chats</span>
                     <span className="w-5 h-5 rounded-full bg-amber-500 text-gray-900 text-xs font-bold flex items-center justify-center">2</span>
@@ -78,12 +78,12 @@ export default function SupportHero({ onDemo }) {
                 {/* Chat panel */}
                 <div className="flex-1 flex flex-col min-w-0">
                   {/* Chat header */}
-                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-                    <div className="flex items-center gap-2.5">
+                  <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-gray-100">
+                    <div className="flex items-center gap-2.5 min-w-0">
                       <div className="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-gray-900 font-bold text-xs shrink-0">47</div>
-                      <div>
-                        <p className="text-gray-900 font-bold text-xs">+254716071032</p>
-                        <p className="text-gray-400 text-xs">KituiMikrotik · Hotspot</p>
+                      <div className="min-w-0">
+                        <p className="text-gray-900 font-bold text-xs truncate">+254716071032</p>
+                        <p className="text-gray-400 text-xs truncate">KituiMikrotik · Hotspot</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-1 shrink-0">
